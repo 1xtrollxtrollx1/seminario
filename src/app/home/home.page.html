@@ -10,7 +10,7 @@
 [loop]="true" 
 [pagination]="true" 
 [slidesPerView]="1">
-  <swiper-slide>
+  <swiper-slide *ngFor="let slide of slides">
     <div class="slide-content">
       <img src="https://www.desktopbackground.org/download/o/2013/05/30/584198_fondos-de-pantalla-cine-todos-los-wallpapers-cine_1920x1080_h.jpg"
        alt="Imagen 1">
@@ -21,38 +21,22 @@
 
   <swiper-slide>
     <div class="slide-content">
-      <img src="https://proleon.com.mx/wp-content/uploads/2023/02/57395-980x551.jpg" alt="Imagen 2">
-      <h1 class="red-title ">Contamos con las mejores salas para que difrutes al !200%</h1>
-      <p class="red-title2">Tenemos todo tipos de salas y precios, para que difrutes tus funciones de la forma que mejor te paresca, ademas
-         contamos con exelente servicio al cliente y comida deliciosa para que difrutes miestras miras tus pelis. </p>
+      <img src="https://hips.hearstapps.com/hmg-prod/images/art-infinity-war-1541580193.jpg?resize=2048:*"
+       alt="Imagen 3">
+      <h1 class="red-title ">Las Peliculas mas controversiales y famosas, con el mejor doblaje.</h1>
+      <p class="red-title2">💎TE ESPERAMOS💎</p>
+      <p class="red-title2">Aprovechas nuestras ofertas semanales.</p>
     </div>
   </swiper-slide>
 
   <swiper-slide>
     <div class="slide-content">
-      <img src="https://hips.hearstapps.com/hmg-prod/images/art-infinity-war-1541580193.jpg?resize=2048:*"
+      <img src="https://www.diariobahiadecadiz.com/wp-content/uploads/2017/02/cinepelispromo.jpg"
        alt="Imagen 3">
-      <h1 class="red-title ">Las Peliculas mas controversiales y famosas, con el mejor doblaje.</h1>
-      <p class="red-title2">💎TE ESPERAMOS💎</p>
-      <p class="red-title2">Aprovechas nuestras ofertas semanales.</p>
-    </div>
-  </swiper-slide>
-  <swiper-slide>
-    <div class="slide-content">
-      <img src="https://hips.hearstapps.com/hmg-prod/images/art-infinity-war-1541580193.jpg?resize=2048:*"
-       alt="Imagen 3">
-      <h1 class="red-title ">Las Peliculas mas controversiales y famosas, con el mejor doblaje.</h1>
-      <p class="red-title2">💎TE ESPERAMOS💎</p>
-      <p class="red-title2">Aprovechas nuestras ofertas semanales.</p>
-    </div>
-  </swiper-slide>
-  <swiper-slide>
-    <div class="slide-content">
-      <img src="https://hips.hearstapps.com/hmg-prod/images/art-infinity-war-1541580193.jpg?resize=2048:*"
-       alt="Imagen 3">
-      <h1 class="red-title ">Las Peliculas mas controversiales y famosas, con el mejor doblaje.</h1>
-      <p class="red-title2">💎TE ESPERAMOS💎</p>
-      <p class="red-title2">Aprovechas nuestras ofertas semanales.</p>
+      <h1 class="red-title ">Quienes Somos</h1>
+      <p class="red-title2">Somos una empresa cineatografica de gran calidad que cuenta con los mas altos estandares premiums.</p>
+      <p class="red-title2">Tenemos las mejores salas de cine, tenemos todo tipo de comidas para que puedas difrutar, tenemos los mejores precios, tenemos las mejores peliculas con la mayor calidad tanto de video como sonido.</p>
+      <p class="red-title2">Que esperas, ven y pasala genial</p>
     </div>
   </swiper-slide>
 
@@ -61,11 +45,11 @@
     <div class="slide-content">
       <div class="image-row">
         <div class="image-container">
-          <img src="blob:https://web.whatsapp.com/944bd23a-6c83-428a-b3b1-c10a62b90712" alt="Imagen 1" class="small-image">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsvVhxE80jXgp4A_D30r2l45vxDRmbYF-pvw&usqp=CAU" alt="Imagen 1" class="small-image">
           <h2 class="image-title">Título 1</h2>
         </div>
         <div class="image-container">
-          <img src="blob:https://web.whatsapp.com/7830ecad-12a7-4ce8-ab49-361176beb8d5" alt="Imagen 2" class="small-image">
+          <img src="https://www.diariobahiadecadiz.com/wp-content/uploads/2017/02/cinepelispromo.jpg" class="small-image">
           <h2 class="image-title">Título 2</h2>
         </div>
       </div>
@@ -92,7 +76,5 @@
     </div>
   </swiper-slide>
   
-  
-
 </swiper-container>
 

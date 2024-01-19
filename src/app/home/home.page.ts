@@ -7,6 +7,16 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
+  slides = [
+    {
+      title : "hola",
+      description: "w",
+      images: "www"
+      
+    }
+
+  ]
+
   constructor() {}
 
 }
