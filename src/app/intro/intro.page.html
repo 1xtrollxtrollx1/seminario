@@ -1,0 +1,46 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="succes"> <!--color de la barra del titulo-->
+  <ion-title class="red-title "> <!-- color letra-->
+      TU TICKED YA
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<!--todo lo de texto de la intro-->
+<swiper-container 
+[loop]="true" 
+[pagination]="true">
+  <swiper-slide *ngFor="let slide of slides">           
+    <div class="slide-content">
+      <img src="https://www.desktopbackground.org/download/o/2013/05/30/584198_fondos-de-pantalla-cine-todos-los-wallpapers-cine_1920x1080_h.jpg"
+       alt="Imagen 1">
+      <h1 class="red-title ">Bienvenido Querido Usuario</h1>
+      <p class="red-title2">Aca podras comprar tus ticked de cine, para ver tus peliculas preferidas.</p>
+      <p class="red-title2">Que esperas, ven y pasala genial</p>
+    </div>
+    <ion-button class="bottom-button" (click)="goToHome()">Volver a Inicio</ion-button >
+  </swiper-slide>
+
+  <swiper-slide>
+    <div class="slide-content">
+      <img src="https://hips.hearstapps.com/hmg-prod/images/art-infinity-war-1541580193.jpg?resize=2048:*"
+       alt="Imagen 3">
+      <h1 class="red-title ">Las Peliculas mas controversiales y famosas, con el mejor doblaje.</h1>
+      <p class="red-title2">💎TE ESPERAMOS💎</p>
+      <p class="red-title2">Aprovecha nuestras ofertas semanales.</p>
+    </div>
+    <ion-button class="bottom-button" (click)="goToHome()">Volver a Inicio</ion-button >
+  </swiper-slide>
+
+  <swiper-slide>
+    <div class="slide-content">
+      <img src="https://www.diariobahiadecadiz.com/wp-content/uploads/2017/02/cinepelispromo.jpg"
+       alt="Imagen 3">
+      <h1 class="red-title ">Quienes Somos</h1>
+      <p class="red-title2">Somos una empresa cineatografica de gran calidad que cuenta con los mas altos estandares premiums.</p>
+      <p class="red-title2">Tenemos las mejores salas de cine, tenemos todo tipo de comida, para que puedas difrutar, tenemos los mejores precios, tenemos las mejores peliculas con la mayor calidad tanto de video como sonido.</p>
+    </div>
+    <ion-button class="bottom-button" (click)="goToHome()">Volver a Inicio</ion-button >
+  </swiper-slide>
+  
+</swiper-container>
+

@@ -26,7 +26,7 @@
   text-decoration: none;
 }
 swiper-container {
-  width: 100%;
+  width: 100%;                   // ahi algunas cosas que no estan en uso
   height: 100%; 
 }
 swiper-slide {
@@ -42,15 +42,20 @@ justify-content: center;
 color : rgb(212, 129, 20); 
 }
 .red-title2 {
-  color: rgba(14, 11, 8, 0.925);
+  color: rgba(14, 11, 8, 0.925);   //color titulos y texto
   font-weight: bold; 
 }
+.red-title3 {
+  color: rgba(203, 27, 7, 0.925);
+  font-weight: bold; 
+}
+
 
 
 .slide-content {
   text-align: center;
   padding: 20px;
-  background-color: #5c2a1d; /* Color de fondo deseado */
+  background-color: #5c2a1d; /* Color de fondo  */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -59,8 +64,8 @@ color : rgb(212, 129, 20);
 }
 
 .slide-content img {
-  width: 100%; /* Ajusta el ancho de la imagen según tus necesidades */
-  max-width: 300px; /* Ajusta el tamaño máximo de la imagen según tus necesidades */
+  width: 100%; /* Ajusta el ancho de la imagen  */
+  max-width: 300px; /* Ajusta el tamaño máximo de la imagen */
   margin-bottom: 10px;
 }
 
@@ -76,7 +81,7 @@ color : rgb(212, 129, 20);
 /* a  a */
 
 .small-image {
-  width: 100px; /* Ajusta el tamaño según sea necesario */
+  width: 100px; /* Ajusta el tamaño  */
   height: auto;
   display: block;
   margin: 0 auto; /* Centra la imagen */
@@ -85,4 +90,17 @@ color : rgb(212, 129, 20);
 .image-row {
   display: flex;
   justify-content: space-between;
+}
+ion-slides {
+  height: 50px; /* Ajusta la altura según tus necesidades */
+}
+
+ion-slide {
+  display: flex;
+}
+
+ion-slide img {
+  width: 30%; /* Hace que las imágenes ocupen el ancho completo */
+  height: auto; /* altura se ajuste automáticamente  */
+  object-fit: cover; /* proporción de la imagen */
 }

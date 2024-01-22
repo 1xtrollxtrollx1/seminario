@@ -1,80 +1,46 @@
-<ion-header [translucent]="true">
-  <ion-toolbar color="succes"> 
-  <ion-title class="red-title ">
-      TU TICKED YA
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content>
 
-<swiper-container 
-[loop]="true" 
-[pagination]="true" 
-[slidesPerView]="1">
-  <swiper-slide *ngFor="let slide of slides">
-    <div class="slide-content">
-      <img src="https://www.desktopbackground.org/download/o/2013/05/30/584198_fondos-de-pantalla-cine-todos-los-wallpapers-cine_1920x1080_h.jpg"
-       alt="Imagen 1">
-      <h1 class="red-title ">Bienvenido Querido Usuario</h1>
-      <p class="red-title2">Aca podras comprar tus ticked de cine, para ver tus peliculas preferidas.</p>
-    </div>
-  </swiper-slide>
-
-  <swiper-slide>
-    <div class="slide-content">
-      <img src="https://hips.hearstapps.com/hmg-prod/images/art-infinity-war-1541580193.jpg?resize=2048:*"
-       alt="Imagen 3">
-      <h1 class="red-title ">Las Peliculas mas controversiales y famosas, con el mejor doblaje.</h1>
-      <p class="red-title2">💎TE ESPERAMOS💎</p>
-      <p class="red-title2">Aprovechas nuestras ofertas semanales.</p>
-    </div>
-  </swiper-slide>
-
-  <swiper-slide>
-    <div class="slide-content">
-      <img src="https://www.diariobahiadecadiz.com/wp-content/uploads/2017/02/cinepelispromo.jpg"
-       alt="Imagen 3">
-      <h1 class="red-title ">Quienes Somos</h1>
-      <p class="red-title2">Somos una empresa cineatografica de gran calidad que cuenta con los mas altos estandares premiums.</p>
-      <p class="red-title2">Tenemos las mejores salas de cine, tenemos todo tipo de comidas para que puedas difrutar, tenemos los mejores precios, tenemos las mejores peliculas con la mayor calidad tanto de video como sonido.</p>
-      <p class="red-title2">Que esperas, ven y pasala genial</p>
-    </div>
-  </swiper-slide>
-
+    <!-- Encabezado de la página de inicio-->
+    <ion-header class="red-title3">
+      <ion-toolbar>
+  <ion-title class="red-title3">
+          Bienvenido a DreamCinema
+        </ion-title>
+      </ion-toolbar>
+    </ion-header>
   
-  <swiper-slide>
-    <div class="slide-content">
-      <div class="image-row">
-        <div class="image-container">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsvVhxE80jXgp4A_D30r2l45vxDRmbYF-pvw&usqp=CAU" alt="Imagen 1" class="small-image">
-          <h2 class="image-title">Título 1</h2>
-        </div>
-        <div class="image-container">
-          <img src="https://www.diariobahiadecadiz.com/wp-content/uploads/2017/02/cinepelispromo.jpg" class="small-image">
-          <h2 class="image-title">Título 2</h2>
-        </div>
-      </div>
-      <div class="image-row">
-        <div class="image-container">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsvVhxE80jXgp4A_D30r2l45vxDRmbYF-pvw&usqp=CAU" alt="Imagen 3" class="small-image">
-          <h2 class="image-title">Título 3</h2>
-        </div>
-        <div class="image-container">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsvVhxE80jXgp4A_D30r2l45vxDRmbYF-pvw&usqp=CAU" alt="Imagen 4" class="small-image">
-          <h2 class="image-title">Título 4</h2>
-        </div>
-      </div>
-      <div class="image-row">
-        <div class="image-container">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsvVhxE80jXgp4A_D30r2l45vxDRmbYF-pvw&usqp=CAU" alt="Imagen 5" class="small-image">
-          <h2 class="image-title">Título 5</h2>
-        </div>
-        <div class="image-container">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsvVhxE80jXgp4A_D30r2l45vxDRmbYF-pvw&usqp=CAU" alt="Imagen 6" class="small-image">
-          <h2 class="image-title">Título 6</h2>
-        </div>
-      </div>
-    </div>
-  </swiper-slide>
+    <!-- Sección de Películas Destacadas -->
+    <ion-row>
+      <ion-col size="12">
+        <h2>Películas Destacadas</h2>
+        <ion-slides [options]="slideOptions">
+          <ion-slide>
+            <img *ngFor="let movie of highlightedMovies" [src]="movie.imageUrl" alt="{{ movie.title }}">
+          </ion-slide>
+        </ion-slides>
+      </ion-col>
+    </ion-row>
   
-</swiper-container>
-
+    <!-- Sección de Próximos Estrenos -->
+    <ion-row>
+      <ion-col size="12">
+        <h2>Próximos Estrenos</h2>
+        <ion-slides [options]="slideOptions">
+          <ion-slide>
+            <img *ngFor="let upcomingMovie of upcomingMovies" [src]="upcomingMovie.imageUrl" alt="{{ upcomingMovie.title }}">
+          </ion-slide>
+        </ion-slides>
+      </ion-col>
+    </ion-row>
+  
+    <!-- Sección de Imagen de Promoción -->
+    <ion-row>
+      <ion-col size="12">
+         
+        <p><p><p><p><p><p></p>
+        <img src="https://www.nescafe.com/co/sites/default/files/2023-05/BANNER_WEB_1600X600_0.jpg" alt="Promocion" style="width: 100%; max-height: 200px;">
+        <img src= "https://www.procinal.com/uploads/HOME/Noticias_Destacados/PROMOCIONES/Promo-MM.png" alt= "Promocion" style="width: 100%; max-height: 200px;">
+    </ion-col>
+    </ion-row>
+  </ion-content>
+  <ion-button (click)="goToIntro()">Quienes somos y que te ofrecemos</ion-button> <!-- Botón para pasar de inicio a intro -->

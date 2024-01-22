@@ -1,0 +1,95 @@
+#container {
+    text-align: center;
+  
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  #container strong {
+    font-size: 20px;
+    line-height: 26px;
+  }
+  
+  #container p {
+    font-size: 16px;
+    line-height: 22px;
+  
+    color: #8c8c8c;
+  
+    margin: 0;
+  }
+  
+  #container a {
+    text-decoration: none;
+  }
+  swiper-container {
+    width: 100%;
+    height: 100%; 
+  }                           /* Estilos de los slide */
+  swiper-slide {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  }
+  .avatar-slide1 {
+  --border-radius: 0px
+  }
+  .red-title { 
+  color : rgb(212, 129, 20); 
+  }
+  .red-title2 {
+    color: rgba(14, 11, 8, 0.925);
+    font-weight: bold; 
+  }
+  
+  
+  .slide-content {
+    text-align: center;
+    padding: 20px;
+    background-color: #5c2a1d; /* Color de fondo */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  
+  .slide-content img {
+    width: 200%; /* Ajusta el ancho de la imageness */
+    max-width: 320px; /* Ajusta el tamaño de las imagenes*/
+    margin-bottom: 10px;
+  }
+  
+  .slide-content h1 {
+    font-size: 24px;
+    margin-top: 10px;
+  }
+  
+  .slide-content p {
+    font-size: 16px;
+    margin-top: 10px;
+  }
+  /* a  a */
+  
+  .small-image {
+    width: 200px; /* Ajusta el tamaño, no en uso */
+    height: auto;
+    display: block;
+    margin: 0 auto; /* Centra la imagen */
+  }
+  
+  .image-row {
+    display: flex;
+    justify-content: space-between;
+  }
+  .bottom-button {
+    position: absolute;
+    bottom: 20px;                   /* Estilo del boton de intro a inicio*/
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
