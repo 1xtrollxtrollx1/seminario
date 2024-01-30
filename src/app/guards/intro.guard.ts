@@ -14,10 +14,12 @@ export class IntroGuard implements CanActivate {
   ) { }
 
   async canActivate() {
-    const mostreIntro = await this.storage.get("introShown");  // (IntroGuard) a "introShown"  se cambio.
+    const mostreIntro = await this.storage.get('mostreLaIntro');  
     if (mostreIntro) {
+      console.log("ya se mostro la intro")
       return true;
     } else {
+      console.log("no se mostro la intro")
       this.router.navigateByUrl("/intro");
       return false;
     }

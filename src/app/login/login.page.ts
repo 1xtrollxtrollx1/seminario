@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../services/auth.service';
 import { NavController } from '@ionic/angular';
+import { Storage } from '@ionic/storage-angular';
+import { Router } from "@angular/router";
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
@@ -11,20 +13,22 @@ export class LoginPage implements OnInit {
   loginForm: FormGroup;
   validation_messages = {
     email: [
-      { type: "required", message: "El correo es obligatorio." },
-      { type: "pattern", message: "El correo ingresado no es válido." }
+      { type: "required", message: "⚠️El correo es obligatorio⚠️" },
+      { type: "pattern", message: "⚠️El correo ingresado no es válido⚠️" }
     ],
     password: [                                    //mensajes del las validaciones
-      { type: "required", message: "La contraseña es obligatoria." },
-      { type: "minlength", message: "La contraseña debe tener al menos 6 caracteres." },
-      { type: "maxlength", message: "La contraseña no puede tener más de 20 caracteres." }
+      { type: "required", message: "⚠️La contraseña es obligatoria⚠️" },
+      { type: "minlength", message: "⚠️La contraseña debe tener al menos 6 caracteres⚠️" },
+      { type: "maxlength", message: "⚠️La contraseña no puede tener más de 20 caracteres⚠️" }
     ]
   };
    loginMessage: any;
   constructor(
     private formBuilder: FormBuilder,
     private authService: AuthService,
-    private navCtrl: NavController
+    private navCtrl: NavController,
+    private storage: Storage,
+    private router: Router
     ) {
     this.loginForm = this.formBuilder.group({
       email: new FormControl(
@@ -46,16 +50,19 @@ export class LoginPage implements OnInit {
       )
     });
   }
+  goToHome() {
+    console.log("Ir a intro");  // Botón para ir a registro
+    this.router.navigate(["/register"]);
+  }
 
   ngOnInit() {}
 
-  login() {
+  login(login_data: any) {
+    console.log(login_data);
   if (this.loginForm.valid) {
-    const loginData = this.loginForm.value;
-    console.log("Datos de inicio de sesión:", loginData);
-    
-    this.authService.loginUser(loginData).then(res => {
+    this.authService.loginUser(login_data).then(res => {
       this.loginMessage = res;
+      this.storage.set('userLoggedIn', true);
       this.navCtrl.navigateForward('/intro');
     }).catch(err => {
       this.loginMessage = err;

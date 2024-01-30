@@ -26,11 +26,11 @@ export class IntroPage implements OnInit {
     console.log("Ya entré y observé la intro");
     
     // Verifica si la introducción ya ha sido mostrada previamente
-    const introShown = await this.storage.get('introShown');
+    const mostreLaIntro = await this.storage.get('mostreLaIntro');
 
-    if (!introShown) {
+    if (!mostreLaIntro) {
       // Vamos a guardar en el storage que ya vio la intro
-      await this.storage.set('introShown', true);
+      await this.storage.set('mostreLaIntro', true);
 
       // Después de guardar, navegamos a la página de inicio
       this.router.navigateByUrl("/home");

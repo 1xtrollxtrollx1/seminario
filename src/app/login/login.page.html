@@ -11,18 +11,17 @@
   </ion-avatar>
 </figure>
 
-<form [formGroup]="loginForm" (ngSubmit)="login()">
-    <ion-item>
+<form [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)">
+  <ion-item>
       <ion-input label="Email" labelPlacement="floating" placeholder="Email" formControlName="email"></ion-input>
     </ion-item>
-<div class="validation-message">   <!--Valida mensages correo-->
+<div class="validation-message">                  <!--Valida mensages correo-->
   <ng-container *ngFor="let validation of validation_messages.email">
     <div *ngIf="                   
     (loginForm.get('email')?.hasError(validation.type) &&
     loginForm.get('email')?.dirty) 
     ">{{validation.message}}</div>
   </ng-container> 
-
   <ion-item>
     <ion-input label="Contraseña" labelPlacement="floating" placeholder="Contraseña" formControlName="password" type="password"></ion-input>
   </ion-item>
@@ -35,12 +34,20 @@
   </div>
 </div>
     <ion-button type="submit" [disabled]="!loginForm.valid"  
+    fill="outline"
     color="success"
     shape="round"
     expand="full"
-    >LOGIN</ion-button> <!--boton login-->
+    >Iniciar sesion</ion-button> <!--boton login-->
+<p></p>
+    <ion-button 
+    fill="outline"
+    (click)="goToHome()"
+    color="success"
+    shape="round"
+    expand="full"
+    >Registrarse</ion-button> <!--boton para ir a registrarse-->
+
   </form>
-  <div class="validation-message">
-    {{loginMessage}}
-  </div>
 </ion-content>  
+

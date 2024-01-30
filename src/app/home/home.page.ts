@@ -35,8 +35,6 @@ export class HomePage {
     ) {}
 
   goToIntro() {
-    console.log("go to intro");
-    this.router.navigateByUrl("/intro");               //boton de home a intro
-    this.storage.set("mostreLaIntro", true);
+   
   }
 }
