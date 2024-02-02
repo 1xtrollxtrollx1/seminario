@@ -87,4 +87,7 @@ export class RegisterPage implements OnInit {
       console.error(error);
     });
   }
+  goToLogin(){             //boton para volver al login en la pag de registro
+    this.navCtrl.navigateBack("/login")
+  }
 }

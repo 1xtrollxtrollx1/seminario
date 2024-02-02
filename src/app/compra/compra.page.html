@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button default-href="#" text="" icon="arrow-back"></ion-back-button>
+    </ion-buttons>
+    <ion-title>DreamCinema - Compra de Boletas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <!-- Opciones de Compra -->
+  <ion-list>
+    <!-- Tipo de Sala -->
+    <ion-item>
+      <ion-label>Tipo de Sala</ion-label>
+      <ion-select placeholder="Seleccione el tipo de sala">
+        <ion-select-option value="normal">Normals</ion-select-option>
+        <ion-select-option value="vip">VIP</ion-select-option>
+        <!-- Agrega más opciones según sea necesario -->
+      </ion-select>
+    </ion-item>
+
+    <!-- Número de Boletas -->
+    <ion-item>
+      <ion-label position="stacked">Cantidad de Boletas</ion-label>
+      <ion-input type="number" placeholder="Ingrese la cantidad"></ion-input>
+    </ion-item>
+
+    <!-- Combo de Comida -->
+    <ion-item>
+      <ion-label>Combo de Comida</ion-label>
+      <ion-toggle></ion-toggle>
+    </ion-item>
+
+    <!-- Tipo de Silla -->
+    <ion-item>
+      <ion-label>Tipo de Silla</ion-label>
+      <ion-radio-group value="normal">
+        <ion-item>
+          <ion-label>Silla Normal</ion-label>
+          <ion-radio slot="start" value="normal"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>Silla con Movimiento</ion-label>
+          <ion-radio slot="start" value="movimiento"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-item>
+  </ion-list>
+
+  <!-- Botón de Confirmar Compra -->
+  <ion-button expand="full" (click)="confirmarCompra()">Confirmar Compra</ion-button>
+</ion-content>

@@ -1,0 +1,35 @@
+<ion-split-pane contentId="content">
+  <ion-menu contentId="content" side="end">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Menu</ion-title>
+        <ion-buttons slot="start">
+          <ion-buttons icon-only (click)="closeMenu()">
+            <ion-icon name="arrow-forward-outline"></ion-icon>
+          </ion-buttons>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <ion-item>
+          DreamCinema 
+        </ion-item>
+        
+        <ion-item (click)="logout1()">
+          <ion-icon name="cart-outline"></ion-icon>
+          Comprar Tickets
+        </ion-item>
+        <ion-item (click)="logout2()">
+          <ion-icon name="accessibility-outline"></ion-icon>
+                    Quienes Somos
+        </ion-item>
+      <ion-item (click)="logout3()">
+        <ion-icon name="log-out"></ion-icon>
+        Cerrar Sesión
+      </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet id="content" main></ion-router-outlet>
+</ion-split-pane>

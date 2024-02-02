@@ -1,45 +1,68 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
 <ion-content>
 
-    <!-- Encabezado de la página de inicio-->
-    <ion-header class="red-title3">
-      <ion-toolbar>
-  <ion-title class="red-title3">
-          Bienvenido a DreamCinema
-        </ion-title>
-      </ion-toolbar>
-    </ion-header>
-  
-    <!-- Sección de Películas Destacadas -->
-    <ion-row>
-      <ion-col size="12">
-        <h2>Películas Destacadas</h2>
-        <ion-slides [options]="slideOptions">
-          <ion-slide>
-            <img *ngFor="let movie of highlightedMovies" [src]="movie.imageUrl" alt="{{ movie.title }}">
-          </ion-slide>
-        </ion-slides>
-      </ion-col>
-    </ion-row>
-  
-    <!-- Sección de Próximos Estrenos -->
-    <ion-row>
-      <ion-col size="12">
-        <h2>Próximos Estrenos</h2>
-        <ion-slides [options]="slideOptions">
-          <ion-slide>
-            <img *ngFor="let upcomingMovie of upcomingMovies" [src]="upcomingMovie.imageUrl" alt="{{ upcomingMovie.title }}">
-          </ion-slide>
-        </ion-slides>
-      </ion-col>
-    </ion-row>
-  
-    <!-- Sección de Imagen de Promoción -->
-    <ion-row>
-      <ion-col size="12">
-         
-        <p><p><p><p><p><p></p>
-        <img src="https://www.nescafe.com/co/sites/default/files/2023-05/BANNER_WEB_1600X600_0.jpg" alt="Promocion" style="width: 100%; max-height: 200px;">
-        <img src= "https://www.procinal.com/uploads/HOME/Noticias_Destacados/PROMOCIONES/Promo-MM.png" alt= "Promocion" style="width: 100%; max-height: 200px;">
+  <!-- Encabezado de la página de inicio -->
+  <ion-header class="red-title3">
+    <ion-toolbar>
+      <ion-title class="red-title3">
+        Bienvenido a DreamCinema
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <!-- Sección de Películas Destacadas -->
+  <ion-row class="section-margin">
+    <ion-col size="12">
+      <h2>Películas Destacadas</h2>
+      <swiper-container [pagination]="true" [slidesPerView]="2" [loop]="true">
+        <swiper-slide *ngFor="let movie of highlightedMovies">
+          <img [src]="movie.imageUrl" alt="{{ movie.title }}">
+        </swiper-slide>
+      </swiper-container>
     </ion-col>
-    </ion-row>
-  </ion-content>
+  </ion-row>
+
+  <!-- Sección de Próximos Estrenos -->
+  <ion-row class="section-margin">
+    <ion-col size="12">
+      <h2>Próximos Estrenos</h2>
+      <swiper-container [pagination]="true" [slidesPerView]="2" [loop]="true">
+        <swiper-slide *ngFor="let upcomingMovie of upcomingMovies">
+          <img [src]="upcomingMovie.imageUrl" alt="{{ upcomingMovie.title }}">
+        </swiper-slide>
+      </swiper-container>
+    </ion-col>
+  </ion-row>
+
+  <!-- Sección de Imagen de Promoción -->
+<ion-row class="section-margin">
+  <ion-col size="12">
+    <h2>Anuncios De DreamCinema</h2>
+    <swiper-container [pagination]="true" [slidesPerView]="1" [autoplay]="true" [autoplayTimeout]="5000" [loop]="true">
+      <swiper-slide>
+        <img src="https://www.nescafe.com/co/sites/default/files/2023-05/BANNER_WEB_1600X600_0.jpg" alt="Promoción" style="width: 100%; max-height: 200px;">
+      </swiper-slide>
+      <swiper-slide>
+        <img src="https://assets.cinemark-core.com/5db771be04daec00076df3f5/content/covers/5e277c231950f60008bd8c4e/desktop/antes-de-las-3-pm-1706311770118" alt="Promoción" style="width: 100%; max-height: 200px;">
+      </swiper-slide>
+      <swiper-slide>
+        <img src="https://www.procinal.com/uploads/HOME/Noticias_Destacados/PROMOCIONES/Promo-MM.png" alt="Promoción" style="width: 100%; max-height: 200px;">
+      </swiper-slide>
+    </swiper-container>
+  </ion-col>
+</ion-row>
+
+</ion-content>
+
+<style>
+  .section-margin {
+    margin-bottom: 80px; /* espacio entre las lit */
+  }
+</style>

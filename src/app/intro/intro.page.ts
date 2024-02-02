@@ -33,13 +33,13 @@ export class IntroPage implements OnInit {
       await this.storage.set('mostreLaIntro', true);
 
       // Después de guardar, navegamos a la página de inicio
-      this.router.navigateByUrl("/home");
+      this.router.navigateByUrl("menu/home");
     }
   }
 
   goToHome() {
     console.log("Go back to home");  // Botón para volver a la pantalla de inicio 
-    this.router.navigate(["/home"]);
+    this.router.navigate(["menu/home"]);
   }
 
   ngOnInit() {
