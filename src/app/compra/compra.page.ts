@@ -1,35 +1,40 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-compra',
   templateUrl: './compra.page.html',
   styleUrls: ['./compra.page.scss'],
 })
-export class CompraPage implements OnInit {
-  quiereCombo: boolean = false;
-  combosSeleccionados: any = {};
+export class CompraPage {
+  isButtonDisabled: boolean = false;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private alertController: AlertController) { }
 
-  ngOnInit() {
+  async ionViewWillEnter() {
+    // Restablecer la propiedad cuando la página está a punto de entrar
+    this.isButtonDisabled = false;
   }
 
-  confirmarCompra() {
-    // Lógica para confirmar la compra
-    console.log('Compra confirmada. ');
-    console.log('Combos seleccionados:', this.combosSeleccionados);
-  }
+  async confirmarCompra() {
+    if (!this.isButtonDisabled) {
+      // Lógica para confirmar la compra
+      console.log('Compra confirmada.');
 
-  goToHome() {
-    console.log("Go back to home");
-    this.router.navigate(["menu/home"]);
-  }
+      // Muestra un mensaje de agradecimiento al usuario
+      const alert = await this.alertController.create({
+        header: '¡Gracias por su compra!',
+        message: 'Su compra ha sido confirmada exitosamente.',
+        buttons: ['OK']
+      });
 
-  toggleCombo() {
-    if (!this.quiereCombo) {
-      // Reinicia la selección de combos si el usuario desactiva la opción
-      this.combosSeleccionados = {};
+      await alert.present();
+
+      this.isButtonDisabled = true; // Puedes deshabilitar el botón si es necesario después de mostrar el mensaje.
+
+      // Redirige a la página de inicio después de la confirmación
+      this.router.navigate(['menu/home']);
     }
   }
 }

@@ -52,6 +52,7 @@ color : rgb(212, 129, 20);
 
 
 
+
 .slide-content {
   text-align: center;
   padding: 20px;
@@ -102,5 +103,56 @@ ion-slide {
 ion-slide img {
   width: 30%; /* Hace que las imágenes ocupen el ancho completo */
   height: auto; /* altura se ajuste automáticamente  */
-  object-fit: cover; /* proporción de la imagen */
+  object-fit: cover; 
+}
+.background-animated-circles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  z-index: -1;
+
+  .circle {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #f8d74b;
+    animation: moveCircle linear infinite;
+  }
+
+  .circle:nth-child(1) {
+    top: 20%;
+    left: 30%;
+    animation-duration: 8s;
+  }
+
+  .circle:nth-child(2) {
+    top: 70%;
+    left: 70%;
+    animation-duration: 10s;
+  }
+
+  .circle:nth-child(3) {
+    top: 40%;
+    left: 50%;
+    animation-duration: 12s;
+  }
+
+  .circle:nth-child(4) {
+    top: 60%;
+    left: 20%;
+    animation-duration: 9s;
+  }
+}
+
+@keyframes moveCircle {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  100% {
+    transform: translate(100px, 0) rotate(360deg);
+  }
 }

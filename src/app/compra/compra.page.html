@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-back-button default-href="#" text="" icon="arrow-back"></ion-back-button>
     </ion-buttons>
-    <ion-title>DreamCinema - Compra de Boletas</ion-title>
+    <ion-title class="red-title3">DreamCinema - Compra de Boletas</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -12,36 +12,69 @@
   <ion-list>
     <!-- Tipo de Sala -->
     <ion-item>
-      <ion-label>Tipo de Sala</ion-label>
+      <ion-label class="red-title">Tipo de Sala</ion-label>
       <ion-select placeholder="Seleccione el tipo de sala">
-        <ion-select-option value="normal">Normals</ion-select-option>
-        <ion-select-option value="vip">VIP</ion-select-option>
+        <ion-select-option value="normal">2D</ion-select-option>
+        <ion-select-option value="vip">3D</ion-select-option>
+        <ion-select-option value="vip+">4D</ion-select-option>
+
         <!-- Agrega más opciones según sea necesario -->
       </ion-select>
     </ion-item>
 
+  
+    <ion-item>
+      <ion-label class="red-title">Selecciona una película</ion-label>
+      <ion-select placeholder="Seleccione su Película">
+        <ion-select-option value="pet-shop-boys-dreamworld">PET SHOP BOYS DREAMWORLD</ion-select-option>
+        <ion-select-option value="el-nino-detras-de-la-puerta">El niño detrás de la puerta</ion-select-option>
+        <ion-select-option value="vidas-pasadas">Vidas Pasadas</ion-select-option>
+        <ion-select-option value="el-nino-y-la-garza">El Niño y la Garza</ion-select-option>
+        <ion-select-option value="cuando-acecha-la-maldad">Cuando Acecha la Maldad</ion-select-option>
+        <ion-select-option value="beekeeper">Beekeeper</ion-select-option>
+        <ion-select-option value="libres">Libres</ion-select-option>
+        <ion-select-option value="dogman">Dogman</ion-select-option>
+        <ion-select-option value="el-juego-de-la-muerte">El juego de la Muerte</ion-select-option>
+        <ion-select-option value="dias-perfectos">Días Perfectos</ion-select-option>
+        <ion-select-option value="no-lo-abras">No lo abras</ion-select-option>
+        <ion-select-option value="pobres-criaturas">Pobres Criaturas</ion-select-option>
+        <!-- Agrega más opciones según sea necesario -->
+      </ion-select>
+    </ion-item>
+    
+
     <!-- Número de Boletas -->
     <ion-item>
-      <ion-label position="stacked">Cantidad de Boletas</ion-label>
+      <ion-label position="stacked" class="red-title">Cantidad de Boletas</ion-label>
       <ion-input type="number" placeholder="Ingrese la cantidad"></ion-input>
     </ion-item>
 
-    <!-- Combo de Comida -->
+    
+  
     <ion-item>
-      <ion-label>Combo de Comida</ion-label>
-      <ion-toggle></ion-toggle>
+      <ion-label class="red-title">Desea agregar uno de nuestros combos</ion-label>
+      <ion-select placeholder="Seleccione el tipo de combo">
+        <div></div>
+        <ion-select-option value="Pequeño">caja de maiz con gaseosa 350ml (19.000)</ion-select-option>
+        <ion-select-option value="Pequeño +">caja de maiz con 2 gaseosa 350ml (25.000)</ion-select-option>
+        <ion-select-option value="medium">2 perros + 2 gaseosas 350ml y chocolatina (28.000)</ion-select-option>
+        <ion-select-option value="medium ++">caja de maiz + 1 perro y 1 gaseosa de 350ml + golocinas(35.000)</ion-select-option>
+        <ion-select-option value="Oferta semanal">3 gaseosas 350ml + 3 perros + chocolatina (35.000)</ion-select-option>
+        <ion-select-option value="Familiar">caja de maiz grande + 4 gaseosas + 4 perros + 4 chocolatinas (80.000)</ion-select-option>
+
+      </ion-select>
     </ion-item>
 
     <!-- Tipo de Silla -->
     <ion-item>
-      <ion-label>Tipo de Silla</ion-label>
+      <ion-label class="red-title">Tipo de Silla</ion-label>
       <ion-radio-group value="normal">
         <ion-item>
-          <ion-label>Silla Normal</ion-label>
+          <ion-label class="red-title">Silla Normal</ion-label>
           <ion-radio slot="start" value="normal"></ion-radio>
         </ion-item>
         <ion-item>
-          <ion-label>Silla con Movimiento</ion-label>
+          <ion-label class="red-title">Silla con Movimiento</ion-label>
           <ion-radio slot="start" value="movimiento"></ion-radio>
         </ion-item>
       </ion-radio-group>
@@ -49,5 +82,5 @@
   </ion-list>
 
   <!-- Botón de Confirmar Compra -->
-  <ion-button expand="full" (click)="confirmarCompra()">Confirmar Compra</ion-button>
+  <ion-button expand="full" (click)="confirmarCompra()" [disabled]="isButtonDisabled" red-title3>Confirmar Compra</ion-button>
 </ion-content>
